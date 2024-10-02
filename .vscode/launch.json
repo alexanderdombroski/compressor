@@ -1,0 +1,54 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Compressor",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/compressor",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "miDebuggerPath": "/Users/alexdombroski/.vscode/extensions/ms-vscode.cpptools-1.21.6-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
+      "setupCommands": [
+        {
+          "description": "Enable LLDB pretty-printing",
+          "text": "command script import lldb.macosx.crashlog",
+          "ignoreFailures": false
+        }
+      ],
+      "preLaunchTask": "build compressor",
+      "postDebugTask": "run compressor",
+      "logging": { "engineLogging": true }
+    },
+    {
+      "name": "Run Standalone File",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/build/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "miDebuggerPath": "/Users/alexdombroski/.vscode/extensions/ms-vscode.cpptools-1.21.6-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
+      "setupCommands": [
+        {
+          "description": "Enable LLDB pretty-printing",
+          "text": "command script import lldb.macosx.crashlog",
+          "ignoreFailures": false
+        }
+      ],
+      "preLaunchTask": "build single",
+      "postDebugTask": "run single",
+      "logging": { "engineLogging": true }
+    }
+  ]
+}
