@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build single",
+        "command": "clang++",
+        "args": [
+          "-std=c++17",           // Specify the C++ standard (e.g., C++17)
+          "-g",                   // Include debug information
+          "${file}",              // Compile the currently open file
+          "-o",                   // Output file flag
+          "${fileDirname}/build/${fileBasenameNoExtension}" // Output executable name
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Generated task by user."
+      },
+      {
+        "label": "run single",
+        "dependsOn": "build single",
+        "command": "${fileDirname}/build/${fileBasenameNoExtension}",
+        "type": "shell",
+        "problemMatcher": []
+      },
+      {
+        "label": "build compressor",
+        "command": "clang++",
+        "args": [
+          "-std=c++17",           // Specify the C++ standard (e.g., C++17)
+          "-g",                   // Include debug information
+          "io/filereader.cpp",        
+          "tests/testfilereader.cpp",             
+          "-o",                   // Output file flag
+          "${workspaceFolder}/build/compressor" // Output executable name
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Generated task by user."
+      },
+      {
+        "label": "run compressor",
+        "dependsOn": "build compressor",
+        "command": "${workspaceFolder}/build/compressor",
+        "type": "shell",
+        "problemMatcher": []
+      }
+
+    ]
+  }
