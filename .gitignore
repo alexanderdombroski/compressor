@@ -1,0 +1,25 @@
+# Ignore build directories
+build/
+bin/
+obj/
+Debug/
+Release/
+
+# Ignore compiled executables
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.so
+*.dll
+
+# Ignore temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+
+
+# Apple
+.DS_Store
