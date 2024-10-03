@@ -9,7 +9,7 @@
           "-g",                   // Include debug information
           "${file}",              // Compile the currently open file
           "-o",                   // Output file flag
-          "${fileDirname}/build/${fileBasenameNoExtension}" // Output executable name
+          "${workspaceFolder}/build/${fileBasenameNoExtension}" // Output executable name
         ],
         "group": {
           "kind": "build",
@@ -21,7 +21,7 @@
       {
         "label": "run single",
         "dependsOn": "build single",
-        "command": "${fileDirname}/build/${fileBasenameNoExtension}",
+        "command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
         "type": "shell",
         "problemMatcher": []
       },

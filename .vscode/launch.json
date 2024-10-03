@@ -15,7 +15,7 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb",
-      "miDebuggerPath": "/Users/alexdombroski/.vscode/extensions/ms-vscode.cpptools-1.21.6-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
+      "miDebuggerPath": "Users/alexdombroski/.vscode/extensions/ms-vscode.cpptools-1.21.6-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
       "setupCommands": [
         {
           "description": "Enable LLDB pretty-printing",
@@ -31,14 +31,14 @@
       "name": "Run Standalone File",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/build/${fileBasenameNoExtension}",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb",
-      "miDebuggerPath": "/Users/alexdombroski/.vscode/extensions/ms-vscode.cpptools-1.21.6-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
+      "miDebuggerPath": "Users/alexdombroski/.vscode/extensions/ms-vscode.cpptools-1.21.6-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
       "setupCommands": [
         {
           "description": "Enable LLDB pretty-printing",
