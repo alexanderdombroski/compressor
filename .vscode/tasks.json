@@ -31,8 +31,9 @@
         "args": [
           "-std=c++17",           // Specify the C++ standard (e.g., C++17)
           "-g",                   // Include debug information
-          "io/filereader.cpp",        
-          "tests/testfilereader.cpp",             
+          "io/filereader.cpp",     
+          "processor/tokenizer.cpp",   
+          "tests/testtokenize.cpp",             
           "-o",                   // Output file flag
           "${workspaceFolder}/build/compressor" // Output executable name
         ],

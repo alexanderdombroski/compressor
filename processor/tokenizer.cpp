@@ -1,17 +1,11 @@
+#include "tokenizer.h"
+
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <utility> 
 
 namespace {
-    // Splits a list of strings by spaces and returns the flattened list (with spaces)
-    std::vector<std::string> splitStrings(const std::vector<std::string>& strings) {
-        std::vector<std::string> results;
-
-        for (const std::string& str : strings) {
-            split(str, results);
-        }
-    }
-
     // Split a single string by spaces, and keep spaces
     void split(const std::string input, std::vector<std::string>& result) {
         std::string current;
@@ -36,6 +30,17 @@ namespace {
         }
     }
 
+    
+    // Splits a list of strings by spaces and returns the flattened list (with spaces)
+    std::vector<std::string> splitStrings(const std::vector<std::string>& strings) {
+        std::vector<std::string> results;
+
+        for (const std::string& str : strings) {
+            split(str, results);
+        }
+
+        return std::move(results);
+    }
 
     // Count single char and Bigram occurances in a vector list of strings
     std::unordered_map<std::string, size_t> countBigrams(const std::vector<std::string>& strings) {
@@ -81,8 +86,11 @@ namespace {
 
 
 // Converts strings to bigrams while minimizing the amount of tokens
-std::vector<std::string> tokenize(const std::vector<std::string>& inputStrings) {
-    const std::vector<std::string> strings = splitStrings(inputStrings); // ToDo Change to flatten with spaces  
+// The input string vector will be passed by reference and cleared
+std::pair<std::vector<std::string>, std::unordered_map<std::string, size_t>> tokenize(std::vector<std::string>& inputStrings) {
+    const std::vector<std::string> strings = splitStrings(inputStrings); // Change to flatten with spaces 
+    std::vector<std::string>().swap(inputStrings); // Free Memory
+
     const std::unordered_map<std::string, size_t> bigramCounts = countBigrams(strings);
     std::vector<std::string> tokens;
     std::unordered_map<std::string, size_t> tokenCounts;
@@ -118,6 +126,7 @@ std::vector<std::string> tokenize(const std::vector<std::string>& inputStrings) 
             tokenCounts[charStr]++;
             pushBigrams(right, tokens, tokenCounts);
         }
-        
     }
+
+    return std::pair(std::move(tokens), std::move(tokenCounts));
 }

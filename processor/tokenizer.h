@@ -3,7 +3,9 @@
 
 #include <unordered_map>
 #include <string>
+#include <utility>
+#include <vector>
 
-std::unordered_map<std::string, size_t> countBigrams(const std::vector<std::string>& strings);
+std::pair<std::vector<std::string>, std::unordered_map<std::string, size_t>> tokenize(std::vector<std::string>& strings);
 
 #endif
