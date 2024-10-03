@@ -1,10 +1,14 @@
 [ ] Read a text file 
     [X] Read a single chunk
 
-[ ] Choose tokenization [method](https://chatgpt.com/c/66fc0932-4478-8005-9adc-1f6f0a7a17a1)
-    [ ] bi/tri gram mix
-    [ ] force spaces to be their own token
+[X] Choose tokenization [method](https://chatgpt.com/c/66fc0932-4478-8005-9adc-1f6f0a7a17a1)
+    [X] bi/tri gram mix
+    [X] force spaces to be their own token
+
 [ ] Create Huffman Tree
+    [X] Join token hashmaps
+    [ ] Use heap to create priority Queue
+    [ ] build Huffman tree
 
 [ ] Use huffman tree to write binary instructions
 
