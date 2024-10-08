@@ -5,12 +5,14 @@
     [X] bi/tri gram mix
     [X] force spaces to be their own token
 
-[ ] Create Huffman Tree
+[X] Create Huffman Tree
     [X] Join token hashmaps
-    [ ] Use heap to create priority Queue
-    [ ] build Huffman tree
+    [X] Create priority Queue
+    [X] build Huffman tree
 
 [ ] Use huffman tree to write binary instructions
+    [X] Get instruction hashmap
+    [ ] Iterate over tokens
 
 [ ] Store Huffman Tree in effecient format
 [ ] Store binary instructions in effecient format 
@@ -21,4 +23,24 @@
 Other Improvements
 [ ] Error Handling and Edge Cases
 [X] Chunk-based File IO
-[ ] Multi-Core Processing
+[ ] Multi-Core Processing/Threading?
+[X] Temporarily Store tokens in file
+
+## Steps
+
+**Compressing**
+
+1. Read File in chunks
+2. Tokenize Chunks
+3. Combine Token Counts for each Chunk
+4. Build Huffman Tree
+5. Create Instruction Hashmap
+6. Store Tree in File
+7. Convert String Tokens to Binary
+8. Store tree and binary
+
+**Decompressing**
+
+1. Read in tree and binary instructions
+2. Decode binary into string tokens
+3. Write text to file using streamwriter
